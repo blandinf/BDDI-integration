@@ -1,47 +1,114 @@
 * {
   margin: 0;
+  font-family: Arial;
 }
 
 .container {
-  margin: 0 20rem;
+  width: 100%;
+  max-width: 924px;
+  margin: 0 auto;
 }
 
 .header {
-  background-color: green;
-  height: 4rem;
+  z-index: 2;
+  width: 100vw;
+  height: 6.25rem;
+  position: absolute;
+  border-bottom: 1px solid white;
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .nav {
+      font-size: 16pt;
+      display: flex;
+      justify-content: space-between;
+      flex-basis: 100%;
+    }
+  }
 }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
+.nav-links {
+  li {
+    opacity: 0.9;
+  }
+  li.active {
+    opacity: 1;
+  }
+}
+
+.login-links {
+  justify-content: flex-end;
 }
 
 ul {
   display: flex;
   flex-direction: row;
   text-decoration: none;
+  padding: 0;
   li {
     list-style-type: none;
-    margin: 0 1.5rem;
+    margin-right: 1.875rem;
     color: white;
+  }
+  li:last-child {
+    margin-right: 0;
+  }
+}
+
+.product {
+  .product-title {
+    margin-bottom: 1rem;
+    font-size: 14pt;
+  }
+  .product-description {
+    font-size: 11pt;
+    margin-bottom: 0.3125rem;
+  }
+  .product-informations {
+    font-size: 11pt;
+  }
+  .product-action {
+    color: white;
+    border: 1px solid white;
+    background: initial;
   }
 }
 
 .hero-section {
+  position: relative;
   height: 31.25rem;
-  background-color: green;
+  background-color: #009f55;
+  .product-action {
+    margin-top: 13.5625rem;
+  }
 }
 
-.hero-content p, .hero-content h3 {
-  color: white;
+.hero-content {
+  flex-direction: column;
+  padding-top: 9.375rem;
+  p, h3 {
+    color: white;
+  }
+  .product-action {
+    margin-top: auto;
+  }
 }
 
 .best-seller-section {
   height: 26.375rem;
+  .best-seller-content {
+    margin-top: 3.125rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .news-section {
   height: 26.75rem;
-  background-color: green;
+  background-color: #0cff56;
 }
+
+
 

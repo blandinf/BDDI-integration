@@ -7,32 +7,37 @@
 </head>
 <body>
 
-<!-- header -->
-<!--<header class="header">-->
-<!--  <div class="container">-->
-<!--    &lt;!&ndash; nav &ndash;&gt;-->
-<!--    <nav class="nav">-->
-<!--      <ul class="nav-links">-->
-<!--        <li>Accueil</li>-->
-<!--        <li>En cours</li>-->
-<!--        <li>Historique</li>-->
-<!--      </ul>-->
-<!--      <ul class="login-links">-->
-<!--        <li>Sophia Lopez</li>-->
-<!--        <li>-->
-<!--          <a>Déconnexion</a>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--    </nav>-->
-<!--    &lt;!&ndash; / nav &ndash;&gt;-->
-<!--  </div>-->
-<!--</header>-->
-<!-- / header -->
+<!-- header-->
+<header class="header">
+  <div class="container">
+    <!-- nav -->
+    <nav class="nav">
+      <ul class="nav-links">
+        <li class="active">Accueil</li>
+        <li>En cours</li>
+        <li>Historique</li>
+      </ul>
+      <ul class="login-links">
+        <li>
+          Sophia Lopez
+          <span>+</span>
+        </li>
+        <li><span>|</span></li>
+        <li>
+          <a>Déconnexion</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- / nav -->
+  </div>
+</header>
+<!-- / header-->
 
 <!-- main -->
 <main>
   <section class="hero-section">
     <div class="container">
+
       <div class="hero-content active">
         <article class="product">
           <h3 class="product-title">Nom du modèle 2</h3>
@@ -54,11 +59,16 @@
 
   <section class="best-seller-section">
     <div class="container">
-      <div>
-        <p></p>
-        <label>
-          <select></select>
-        </label>
+
+      <div class="best-seller-content">
+        <p class="best-seller-title">Best-seller</p>
+        <div class="best-seller-select">
+          <label for="filter">trier par</label>
+          <select id="filter">
+            <option value="dog">stock</option>
+            <option value="cat">Cat</option>
+          </select>
+        </div>
       </div>
       <div class="best-seller-list active">
         <article class="product">
@@ -93,8 +103,8 @@
 
   <section class="news-section">
     <div class="container">
-      <p></p>
 
+      <p></p>
       <div class="news-content active">
         <article class="product">
           <img class="product-img">
