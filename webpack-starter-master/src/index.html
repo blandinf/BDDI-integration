@@ -19,17 +19,15 @@
       </ul>
       <ul class="login-links">
         <li>
-          Sophia Lopez
-          <span>+</span>
+          Sophia Lopez<span class="icon">+</span>
         </li>
-        <li><span>|</span></li>
-        <li>
-          <a>Déconnexion</a>
-        </li>
+        <li class="pipe"><span>|</span></li>
+        <li class="disconnect"><a>Déconnexion</a></li>
       </ul>
     </nav>
     <!-- / nav -->
   </div>
+  <div class="border-bottom" />
 </header>
 <!-- / header-->
 
@@ -43,7 +41,10 @@
           <h3 class="product-title">Nom du modèle 2</h3>
           <p class="product-description">Taille L - Mécanique</p>
           <p class="product-informations">Rouge Feu</p>
-          <button class="product-action">commander</button>
+          <button class="product-action">
+            commander
+            <i class="arrow-right"></i> 
+          </button>
         </article>
       </div>
 
@@ -61,57 +62,108 @@
     <div class="container">
 
       <div class="best-seller-content">
-        <p class="best-seller-title">Best-seller</p>
-        <div class="best-seller-select">
-          <label for="filter">trier par</label>
-          <select id="filter">
-            <option value="dog">stock</option>
-            <option value="cat">Cat</option>
-          </select>
+        <div class="best-seller-header">
+            <p class="best-seller-title">Best-seller</p>
+            <div class="best-seller-select">
+              <label 
+                id="label-filter"
+                for="filter">trier par :</label>
+              <select id="filter">
+                <option value="dog">stock</option>
+                <option value="cat">Cat</option>
+              </select>
+              <img 
+                id="icon-filter"
+                src="../public/images/svg/25756.svg">
+            </div>
         </div>
-      </div>
-      <div class="best-seller-list active">
-        <article class="product">
-          <img>
-          <h3 class="product-title"></h3>
-          <p class="product-description"></p>
-          <p class="in-stock"></p>
-        </article>
-        <article class="product">
-          <img>
-          <h2 class="product-title"></h2>
-          <p class="product-description"></p>
-          <p class="in-stock"></p>
-        </article>
-      </div>
-<!--      <div class="best-seller-list">-->
-<!--        <article class="product">-->
-<!--          <img>-->
-<!--          <h2 class="product-title"></h2>-->
-<!--          <p class="product-description"></p>-->
-<!--          <p class="in-stock"></p>-->
-<!--        </article>-->
-<!--        <article class="product">-->
-<!--          <img>-->
-<!--          <h2 class="product-title"></h2>-->
-<!--          <p class="product-description"></p>-->
-<!--          <p class="in-stock"></p>-->
-<!--        </article>-->
-<!--      </div>-->
+        <div class="best-seller-list active">
+          <article class="product">
+            <div class="product-img"></div>
+            <div class="product-background">
+              <h2 class="product-title">Nom du modèle un peu long</h2>
+              <p class="product-description">Manuel - Vert Gazon</p>
+              <div class="product-footer">
+                <p class="out-stock">0 en stock</p>
+                <div class="out-stock-bar"></div>
+              </div>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product-img"></div>
+            <div class="product-background">
+              <h2 class="product-title">Un autre modèle un autre nom</h2>
+              <p class="product-description">Manuel - Vert Gazon</p>
+              <div class="product-footer">
+                <p class="out-stock">1 en stock</p>
+                <div class="out-stock-bar"></div>
+              </div>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product-img"></div>
+            <div class="product-background">
+              <h2 class="product-title">Nom du modèle un peu long</h2>
+              <p class="product-description">Manuel - Vert Gazon</p>
+              <div class="product-footer">
+                <p class="in-stock">4 en stock</p>
+                <div class="in-stock-bar"></div>
+              </div>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product-img"></div>
+            <div class="product-background">
+              <h2 class="product-title">Nom du modèle un peu long</h2>
+              <p class="product-description">Manuel - Vert Gazon</p>
+              <div class="product-footer">
+                <p class="in-stock">4 en stock</p>
+                <div class="in-stock-bar"></div>
+              </div>
+            </div>
+          </article>
+          <article class="product">
+            <div class="product-img"></div>
+            <div class="product-background">
+              <h2 class="product-title">Dernier modèle de la liste</h2>
+              <p class="product-description">Manuel - Vert Gazon</p>
+              <div class="product-footer">
+                <p class="in-stock">5 en stock</p>
+                <div class="in-stock-bar"></div>
+              </div>
+            </div>
+          </article>
+        </div>
     </div>
   </section>
 
   <section class="news-section">
     <div class="container">
-
-      <p></p>
+      <p class="news-title">Nouveautés</p>
       <div class="news-content active">
         <article class="product">
           <img class="product-img">
-          <h3 class="product-title"></h3>
-          <p class="product-description"></p>
-          <button class="product-action">commander</button>
+          <div class="product-content">
+            <p class="product-title">Nom du nouveau modèle</p>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <button class="product-action">
+                commander
+                <i class="arrow-right"></i> 
+              </button>
+          </div>
         </article>
+      </div>
+
+      <div class="slide-points">
+        <div class="point">
+            
+        </div>
+        <div class="point active">
+
+        </div>
+        <div class="point">
+            
+          </div>
       </div>
 
 <!--      <div class="news-content">-->
