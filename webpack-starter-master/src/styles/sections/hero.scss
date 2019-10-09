@@ -1,0 +1,29 @@
+.hero-section {
+  position: relative;
+  height: 496px;
+  background-color: #009f55;
+  .hero-content {
+    padding-top: 9.375rem;
+    height: 300px;
+    .product {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      .product-action {
+        border: 1px solid white;
+        color: white;
+        z-index: 2;
+      }
+      .product-img {
+        position: absolute;
+        height: 671px;
+        width: 1107px;
+        top: 24px;
+        margin-left: -80px;
+      }
+    }
+    p, h3 {
+      color: white;
+    }
+  }
+}

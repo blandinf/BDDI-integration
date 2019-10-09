@@ -1,0 +1,71 @@
+.news-section {
+  height: 469px;
+  background-color: #0cff56;
+  color: #212121;
+  .news-title {
+    padding: 113px 0 50px 0;
+    font-size: 14px;
+    font-weight: bolder;
+    text-align: center;
+  }
+  .news-content {
+    flex-direction: row;
+    height: 180px;
+    .product {
+      display: flex;
+      height: 100%;
+      .product-img {
+        height: 100%;
+        width: 350px;
+        background-color: white;
+        margin: 0 50px 0 86px;
+      }
+      .product-content {
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        .product-title {
+          font-size: 18px;
+        }
+        .product-action {
+          color: black;
+          border: 1px solid black;
+        }
+      }
+    }
+  }
+  .slide-points {
+    margin-top: 38px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .point {
+      margin-top: 5px;
+      margin-left: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #000000;
+      border: 1px solid #ffffff;
+      &.active {
+        margin-top: 0px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #000000;
+        border: 3px solid #212121;
+      }
+    }
+    #point1 {
+      background: url('../../public/images/news/bike1.png') center;
+    }
+    #point2 {
+      background: url('../../public/images/news/bike2.png');
+      background-position: 1px 40%;
+      background-size: cover;
+    }
+    #point3 {
+      background: url('../../public/images/news/bike3.png') center;
+    }
+  }
+}
