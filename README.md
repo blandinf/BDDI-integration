@@ -22,6 +22,6 @@ trier par : rien
 à faire parfait
 
 slider : 10 éléments ok
-
+Gérer les cas où on ajoute des vélos, change le JSON
 
 thibault@ocitocine.com
