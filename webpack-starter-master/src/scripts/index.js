@@ -1,3 +1,9 @@
 import '../styles/index.scss';
 
-console.log('webpack starterkit');
+import Slide from './components/Slide';
+import List from './components/List';
+
+const app = ((slide, list) => {
+    slide.init();
+    list.init();
+})(Slide, List);
