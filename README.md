@@ -21,4 +21,7 @@ trier par : rien
 1280 - 1920 - mobile
 à faire parfait
 
+slider : 10 éléments ok
+
+
 thibault@ocitocine.com
