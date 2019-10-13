@@ -8,7 +8,7 @@ const List = {
         let newItem;
         Array.from(document.querySelectorAll('.move')).map(item => {
             newItem = new ListItem();
-            ListItem.init(item);
+            newItem.init(item);
         });
     }
 };
