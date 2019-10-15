@@ -5,12 +5,8 @@ import ListItem from './ListItem';
 
 const List = {
     init () {
+        this.test = true;
         this.loadDatas();
-        let newItem;
-        Array.from(document.querySelectorAll('.move')).map(item => {
-            newItem = new ListItem();
-            newItem.init(item);
-        });
     },
 
     loadDatas () {
@@ -21,14 +17,14 @@ const List = {
         if (req.status === 200) {
             const modelsParsed = JSON.parse(req.responseText);
             console.log(modelsParsed);
-            for (const modelParsed of modelsParsed) {
-                if (modelParsed.hero) {
+            for (const model of modelsParsed) {
+                if (model.hero) {
                     let template = document.querySelector('#hero-template');
-                    this.buildElement(template);
+                    let section = document.querySelector('.hero-content');
+                    this.buildElement(template, section, model);
                 } 
-                if (modelParsed.best) {
+                if (model.best) {
                     let template = document.querySelector('#best-seller-template');
-
                 }
             }
         } else {
@@ -36,10 +32,14 @@ const List = {
         }
     },
 
-    buildElement (template) {
+    buildElement (template, section, model) {
         let el = document.createElement('article');
+        el.classList.add('product');
+        el.classList.add('item');
         el.innerHTML = template.innerHTML;
-        
+        let item;
+        item = new ListItem().init(el, model);
+        section.append(item);
     }
 };
 

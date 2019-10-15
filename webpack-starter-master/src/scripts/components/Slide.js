@@ -3,20 +3,20 @@ import { setInterval } from 'timers';
 
 const Slide = {
     init () {
+        Array.from(document.querySelectorAll('.move')).map(item => {
+            item.addEventListener('click', (e) => this.move(e));
+        });
+
         this.hideUnactiveElements();
         this.launchAutoSlides();        
-        BUS.addEventListener('MOVE::LIST', (e) => this.slide(e));
     },
 
-    slide (event, auto = false, list = null) {
+    slide (list, direction, auto = false) {
 
-        let currentList;
-        auto ? currentList = list : currentList = event.detail.list;
-
-        let currentItem = currentList.querySelector('.active');
+        let currentItem = list.querySelector('.active');
 
         if (!auto) {
-            if (event.detail.direction === 'up') {
+            if (direction === 'up') {
                 if (currentItem.nextElementSibling) {
                     currentItem.classList.remove('active');
                     currentItem.nextElementSibling.classList.add('active');
@@ -29,7 +29,7 @@ const Slide = {
             }    
         } else {
             if (!currentItem.nextElementSibling) {
-                currentItem = currentList.children[0];
+                currentItem = list.children[0];
                 currentItem.classList.add('active');
                 currentItem.nextElementSibling.classList.remove('active');
             } else {
@@ -38,7 +38,7 @@ const Slide = {
             }
         }
         
-        this.updateDOM(currentList);
+        this.updateDOM(list);
     },
 
     updateDOM (list) {
@@ -68,10 +68,35 @@ const Slide = {
         let slideAutos = document.querySelectorAll('.auto');
         for (let slideAuto of slideAutos) {
             setInterval(() => {
-                this.slide(null, true, slideAuto);
+                this.slide(slideAuto, null,  true);
             }, 3000);
         }
     },
+
+    move (event) {
+        let direction;
+        if (event.target.classList.contains('move')) {
+            event.target.classList.contains('up') ? direction = 'up' : direction = 'down';
+        }
+
+        let parentNodes = event.target.parentNode;
+        let container = parentNodes.querySelector('.container');
+        if (!container) {
+            if (!parentNodes.parentNode.classList.contains('container')) {
+                container = parentNodes.parentNode.querySelector('.container');
+            } else {
+                container = parentNodes.parentNode;
+            }
+        }
+        let list;
+        if (container.querySelector('.items-list')) {
+            list = container.querySelector('.items-list');
+        } else {
+            list = container.querySelector('.item-list');
+        }
+
+        this.slide(list, direction);
+    }
 };
 
 export default Slide;

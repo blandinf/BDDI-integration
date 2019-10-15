@@ -9,7 +9,7 @@
         "stock": 3,
         "slug": "/model/0",
         "images": {
-            "big": "",
+            "big": "bike1.png",
             "small": "" 
         },
         "hero": true,
@@ -217,7 +217,7 @@
         "stock": 1,
         "slug": "/model/13",
         "images": {
-            "big": "",
+            "big": "bike2.png",
             "small": "" 
         },
         "hero": true,
