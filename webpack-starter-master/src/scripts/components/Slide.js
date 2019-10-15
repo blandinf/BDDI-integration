@@ -5,10 +5,10 @@ const Slide = {
     init () {
         this.hideUnactiveElements();
         this.launchAutoSlides();        
-        BUS.addEventListener('MOVE::LIST', (e) => this.slideList(e));
+        BUS.addEventListener('MOVE::LIST', (e) => this.slide(e));
     },
 
-    slideList (event, auto = false, list = null) {
+    slide (event, auto = false, list = null) {
 
         let currentList;
         auto ? currentList = list : currentList = event.detail.list;
@@ -68,7 +68,7 @@ const Slide = {
         let slideAutos = document.querySelectorAll('.auto');
         for (let slideAuto of slideAutos) {
             setInterval(() => {
-                this.slideList(null, true, slideAuto);
+                this.slide(null, true, slideAuto);
             }, 3000);
         }
     },
