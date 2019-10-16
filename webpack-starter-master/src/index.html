@@ -35,34 +35,7 @@
 <main>
   <section class="hero-section">
     <div class="container">
-
       <div class="hero-content item-list auto">
-        <!-- <article class="product item active">
-          <img
-              class="product-img"
-              src="../public/images/bikes/bike1.png"
-              alt="Nom du modèle 2">
-          <h3 class="product-title">Nom du modèle 2</h3>
-          <p class="product-description">Taille L - Mécanique</p>
-          <p class="product-informations">Rouge Feu</p>
-          <button class="product-action">
-            commander
-            <i class="arrow-right"></i> 
-          </button>
-        </article>
-        <article class="product item">
-          <img
-              class="product-img"
-              src="../public/images/bikes/bike2.png"
-              alt="Nom du modèle 2">
-          <h3 class="product-title">Nom du modèle 3</h3>
-          <p class="product-description">Taille L - Mécanique</p>
-          <p class="product-informations">Rouge Feu</p>
-          <button class="product-action">
-            commander
-            <i class="arrow-right"></i> 
-          </button>
-        </article> -->
       </div>
     </div>
   </section>
@@ -90,89 +63,7 @@
             </div>
         </div>
         <div class="items-list">
-          <div class="best-seller-list list active">
-              <article class="product">
-                <div class="product-img-background">
-                  <img
-                    class="product-img"
-                    src="../public/images/bikes/bike1.png"
-                    alt="Nom du modèle un peu long">
-                </div>
-                <div class="product-background">
-                  <h2 class="product-title">Nom du modèle un peu long</h2>
-                  <p class="product-description">Manuel - Vert Gazon</p>
-                  <div class="product-footer">
-                    <p class="out-stock">0 en stock</p>
-                    <div class="out-stock-bar"></div>
-                  </div>
-                </div>
-              </article>
-              <article class="product">
-                <div class="product-img-background">
-                  <img
-                    class="product-img"
-                    src="../public/images/bikes/bike2.png"
-                    alt="Un autre modèle un autre nom">
-                </div>
-                <div class="product-background">
-                  <h2 class="product-title">Un autre modèle un autre nom</h2>
-                  <p class="product-description">Semi-Automatique - Blanc</p>
-                  <div class="product-footer">
-                    <p class="out-stock">1 en stock</p>
-                    <div class="out-stock-bar"></div>
-                  </div>
-                </div>
-              </article>
-              <article class="product">
-                <div class="product-img-background">
-                  <img
-                    class="product-img"
-                    src="../public/images/bikes/bike3.png"
-                    alt="Nom du modèle toujours long">
-                </div>
-                <div class="product-background">
-                  <h2 class="product-title">Nom du modèle toujours long</h2>
-                  <p class="product-description">Semi-Automatique - Noir</p>
-                  <div class="product-footer">
-                    <p class="in-stock">4 en stock</p>
-                    <div class="in-stock-bar"></div>
-                  </div>
-                </div>
-              </article>
-              <article class="product">
-                <div class="product-img-background">
-                  <img
-                    class="product-img"
-                    src="../public/images/bikes/bike4.png"
-                    alt="Modèle Nombizarrelong">
-                </div>
-                <div class="product-background">
-                  <h2 class="product-title">Modèle Nombizarrelong</h2>
-                  <p class="product-description">Manuel - Rouge</p>
-                  <div class="product-footer">
-                    <p class="in-stock">4 en stock</p>
-                    <div class="in-stock-bar"></div>
-                  </div>
-                </div>
-              </article>
-              <article class="product">
-                <div class="product-img-background">
-                  <img
-                    class="product-img"
-                    src="../public/images/bikes/bike5.png"
-                    alt="Dernier modèle de la liste">
-                </div>
-                <div class="product-background">
-                  <h2 class="product-title">Dernier modèle de la liste</h2>
-                  <p class="product-description">Automatique - Blanc</p>
-                  <div class="product-footer">
-                    <p class="in-stock">5 en stock</p>
-                    <div class="in-stock-bar"></div>
-                  </div>
-                </div>
-              </article>
-            </div>
-          <div class="best-seller-list list">
+          <!-- <div class="best-seller-list list">
               <article class="product">
                 <div class="product-img-background">
                   <img
@@ -253,7 +144,7 @@
                   </div>
                 </div>
               </article>
-            </div>
+            </div> -->
         </div>
       </div>
     </div>
@@ -332,9 +223,9 @@
     type="text/template" 
     id="hero-template">
     <img
-        class="product-img"
-        src="../public/images/bikes/"
-        alt="Nom du modèle 2">
+      class="product-img"
+      src="../public/images/bikes/"
+      alt="Nom du modèle 2">
     <h3 class="product-title"></h3>
     <p class="product-description"></p>
     <p class="product-color"></p>
@@ -342,6 +233,25 @@
       commander
       <i class="arrow-right"></i> 
     </button>
+  </script>
+
+  <script 
+    type="text/template"
+    id="best-seller-template">
+    <div class="product-img-background">
+      <img
+        class="product-img"
+        src="../public/images/bikes/"
+        alt="Nom du modèle un peu long">
+    </div>
+    <div class="product-background">
+      <h2 class="product-title"></h2>
+      <p class="product-description"></p>
+      <div class="product-footer">
+        <p class="stock"></p>
+        <div class="stock-bar"></div>
+      </div>
+    </div>
   </script>
 
 <!-- footer -->

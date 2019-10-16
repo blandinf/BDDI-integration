@@ -5,7 +5,6 @@ import ListItem from './ListItem';
 
 const List = {
     init () {
-        this.test = true;
         this.loadDatas();
     },
 
@@ -16,15 +15,28 @@ const List = {
 
         if (req.status === 200) {
             const modelsParsed = JSON.parse(req.responseText);
-            console.log(modelsParsed);
+            const modelsOnBestSellerLength = modelsParsed.filter(model => model.best).length;
+            const divsNumberRequire = Math.ceil(modelsOnBestSellerLength/5);
+            const section = document.querySelector('.best-seller-section');
+            const list = section.querySelector('.items-list'); 
+            for (let i=0; i < divsNumberRequire; i++) {
+                const div = document.createElement('div');
+                div.classList.add('best-seller-list');
+                div.classList.add('list');
+                list.append(div);
+            }
             for (const model of modelsParsed) {
                 if (model.hero) {
-                    let template = document.querySelector('#hero-template');
-                    let section = document.querySelector('.hero-content');
-                    this.buildElement(template, section, model);
+                    const template = document.querySelector('#hero-template');
+                    const section = document.querySelector('.hero-section');
+                    const list = section.querySelector('.item-list');
+                    this.buildElement(template, list, model);
                 } 
                 if (model.best) {
-                    let template = document.querySelector('#best-seller-template');
+                    const template = document.querySelector('#best-seller-template');
+                    const section = document.querySelector('.best-seller-section');
+                    const list = section.querySelector('.items-list'); 
+                    this.buildElement(template, list, model);
                 }
             }
         } else {
@@ -32,15 +44,24 @@ const List = {
         }
     },
 
-    buildElement (template, section, model) {
-        let el = document.createElement('article');
+    buildElement (template, list, model) {
+        const el = document.createElement('article');
         el.classList.add('product');
-        el.classList.add('item');
+        list.classList.contains('item-list') ? el.classList.add('item') : '';
+
         el.innerHTML = template.innerHTML;
-        let item;
-        item = new ListItem().init(el, model);
-        section.append(item);
-    }
+        const item = new ListItem().init(el, model);
+        if (list.classList.contains('item-list')) {
+            list.append(item);
+        } else {
+            const lists = list.querySelectorAll('.list');
+            for (const list of Array.from(lists).reverse()) {
+                if (list.children.length < 5) {
+                    list.append(item);
+                }
+            }
+        }
+    },
 };
 
 export default List;

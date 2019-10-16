@@ -26,7 +26,7 @@ class ListItem {
         this.imgPath.src += this.model.images.big;
         this.title.textContent = this.model.title;
         this.description.textContent = 'Taille ' + this.model.specs.size + ' - ' + this.model.specs.engine;
-        this.color.textContent = this.model.specs.color;
+        // this.color.textContent = this.model.specs.color;
     }
 }
 

@@ -56,6 +56,9 @@ const Slide = {
         const itemsList = document.querySelectorAll('.items-list');
         const slides = Array.from(itemList).concat(Array.from(itemsList));
         for (let slide of slides) {
+            console.log(slide);
+            console.log(slide.children);
+            slide.children[0].classList.add('active');
             for (let child of slide.children) {
                 if (!child.classList.contains('active')) {
                     child.style.display = 'none';
@@ -89,11 +92,7 @@ const Slide = {
             }
         }
         let list;
-        if (container.querySelector('.items-list')) {
-            list = container.querySelector('.items-list');
-        } else {
-            list = container.querySelector('.item-list');
-        }
+        container.querySelector('.items-list') ? list = container.querySelector('.items-list') : list = container.querySelector('.item-list');
 
         this.slide(list, direction);
     }
