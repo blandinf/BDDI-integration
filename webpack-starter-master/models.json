@@ -382,5 +382,56 @@
         },
         "hero": false,
         "best": false
+    },
+    {
+        "title": "Left",
+        "specs": {
+            "size": "L",
+            "engine": "Mécanique",
+            "color" : "Arc-en-ciel"
+        },
+        "stock": 0,
+        "slug": "/model/23",
+        "images": {
+            "big": "bike1.png",
+            "small": "" 
+        },
+        "hero": false,
+        "best": false,
+        "news": true
+    },
+    {
+        "title": "Middle",
+        "specs": {
+            "size": "L",
+            "engine": "Mécanique",
+            "color" : "Arc-en-ciel"
+        },
+        "stock": 0,
+        "slug": "/model/23",
+        "images": {
+            "big": "bike2.png",
+            "small": "" 
+        },
+        "hero": false,
+        "best": false,
+        "news": true
+    },
+    {
+        "title": "Right",
+        "specs": {
+            "size": "L",
+            "engine": "Mécanique",
+            "color" : "Arc-en-ciel"
+        },
+        "stock": 0,
+        "slug": "/model/23",
+        "images": {
+            "big": "bike3.png",
+            "small": "" 
+        },
+        "hero": false,
+        "best": false,
+        "news": true
     }
 ]

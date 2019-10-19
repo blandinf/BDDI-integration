@@ -7,7 +7,12 @@ const Slide = {
             item.addEventListener('click', (e) => this.move(e));
         });
 
-        this.hideUnactiveElements();
+        Array.from(document.querySelectorAll('.point')).map(item => {
+            item.addEventListener('click', (e) => this.activate(e));
+        });
+
+        this.prepareSlides();
+        this.showCorrespondingItem();
         this.launchAutoSlides();        
     },
 
@@ -38,10 +43,10 @@ const Slide = {
             }
         }
         
-        this.updateDOM(list);
+        this.updateDisplayProperties(list);
     },
 
-    updateDOM (list) {
+    updateDisplayProperties (list) {
         for (let child of list.children) {
             if (child.classList.contains('active')) {
                 child.style.display = 'flex';
@@ -51,18 +56,15 @@ const Slide = {
         }
     },
 
-    hideUnactiveElements () {
+    prepareSlides () {
         const itemList = document.querySelectorAll('.item-list');
         const itemsList = document.querySelectorAll('.items-list');
-        const slides = Array.from(itemList).concat(Array.from(itemsList));
+        const slidesPoints = document.querySelectorAll('.slide-points');
+        const slides = Array.from(itemList).concat(Array.from(itemsList)).concat(Array.from(slidesPoints));
         for (let slide of slides) {
-            console.log(slide);
-            console.log(slide.children);
             slide.children[0].classList.add('active');
-            for (let child of slide.children) {
-                if (!child.classList.contains('active')) {
-                    child.style.display = 'none';
-                }
+            if (!slide.classList.contains('slide-points')) {
+                this.updateDisplayProperties(slide);
             }
         }
     },
@@ -83,18 +85,50 @@ const Slide = {
         }
 
         let parentNodes = event.target.parentNode;
-        let container = parentNodes.querySelector('.container');
-        if (!container) {
-            if (!parentNodes.parentNode.classList.contains('container')) {
-                container = parentNodes.parentNode.querySelector('.container');
-            } else {
-                container = parentNodes.parentNode;
+        if (!parentNodes.classList.contains('slide-points')) {
+            let container = parentNodes.querySelector('.container');
+            if (!container) {
+                if (!parentNodes.parentNode.classList.contains('container')) {
+                    container = parentNodes.parentNode.querySelector('.container');
+                } else {
+                    container = parentNodes.parentNode;
+                }
+            }
+            let list;
+            container.querySelector('.items-list') ? list = container.querySelector('.items-list') : list = container.querySelector('.item-list');
+    
+            this.slide(list, direction);
+        } else {
+            this.slide(parentNodes, direction);
+        }
+    },
+
+    replaceActiveElement (el, list) {
+        for (const item of list.children) {
+            if (item.classList.contains('active')) {
+                item.classList.remove('active');
             }
         }
-        let list;
-        container.querySelector('.items-list') ? list = container.querySelector('.items-list') : list = container.querySelector('.item-list');
+        el.classList.add('active');
+    },
 
-        this.slide(list, direction);
+    activate (event) {
+        const list = event.target.parentNode;
+        this.replaceActiveElement(event.target, list);
+        this.showCorrespondingItem();
+    },
+
+    showCorrespondingItem () {
+        const slidesPoints = document.querySelectorAll('.slide-points');
+
+        for (let slidePoints of slidesPoints) {
+            const currentActiveItem = slidePoints.querySelector('.active');
+            const id = currentActiveItem.id.match(/\d+$/)[0];
+            const productToDisplay = document.querySelector('#product'+id);
+            const list = productToDisplay.parentNode;
+            this.replaceActiveElement(productToDisplay, list);
+            this.updateDisplayProperties(list);
+        }
     }
 };
 
