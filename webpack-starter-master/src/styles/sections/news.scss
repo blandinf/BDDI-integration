@@ -27,7 +27,7 @@
         .product-title {
           font-size: 18px;
         }
-        .product-action {
+        .btn-action {
           color: black;
           border: 1px solid black;
         }
@@ -47,6 +47,8 @@
       border-radius: 50%;
       background-color: #000000;
       border: 1px solid #ffffff;
+      background-position: center;
+      background-size: cover;
       &.active {
         margin-top: 0px;
         width: 50px;
@@ -55,17 +57,6 @@
         background-color: #000000;
         border: 3px solid #212121;
       }
-    }
-    #point1 {
-      background: url('../../public/images/news/bike1.png') center;
-    }
-    #point2 {
-      background: url('../../public/images/news/bike2.png');
-      background-position: 1px 40%;
-      background-size: cover;
-    }
-    #point3 {
-      background: url('../../public/images/news/bike3.png') center;
     }
   }
 }

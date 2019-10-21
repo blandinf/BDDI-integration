@@ -11,6 +11,8 @@ const Slide = {
             item.addEventListener('click', (e) => this.activate(e));
         });
 
+        BUS.addEventListener('DOM::UPDATE', (e) => this.updateDisplayProperties(e.detail));
+
         this.prepareSlides();
         this.showCorrespondingItem();
         this.launchAutoSlides();        
@@ -19,6 +21,7 @@ const Slide = {
     slide (list, direction, auto = false) {
 
         let currentItem = list.querySelector('.active');
+        const heroSection = document.querySelector('.hero-section');
 
         if (!auto) {
             if (direction === 'up') {
@@ -37,9 +40,13 @@ const Slide = {
                 currentItem = list.children[0];
                 currentItem.classList.add('active');
                 currentItem.nextElementSibling.classList.remove('active');
+                const bgColor = currentItem.querySelector('.product-bg-color');
+                bgColor ? heroSection.style.backgroundColor = bgColor.textContent : null;
             } else {
                 currentItem.classList.remove('active');
                 currentItem.nextElementSibling.classList.add('active');
+                const bgColor = currentItem.nextElementSibling.querySelector('.product-bg-color');
+                bgColor ? heroSection.style.backgroundColor = bgColor.textContent : null;
             }
         }
         
@@ -65,6 +72,16 @@ const Slide = {
             slide.children[0].classList.add('active');
             if (!slide.classList.contains('slide-points')) {
                 this.updateDisplayProperties(slide);
+            } else {
+                for (let point of slide.children) {
+                    const id = point.id.match(/\d+$/)[0];
+                    const productAssociated = document.querySelector('#product'+id);
+                    const productAssociatedImg = productAssociated.querySelector('.product-img');
+                    point.style.backgroundImage = "url("+ productAssociatedImg.src +")";
+                    if (productAssociatedImg.src.includes('bike2')){
+                        point.style.backgroundPosition = "1px 40%";
+                    }
+                }
             }
         }
     },

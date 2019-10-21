@@ -57,7 +57,7 @@
                 <option value="cat">Cat</option>
               </select>
               <img 
-                id="icon-filter"
+                class="icon-filter"
                 src="../public/images/svg/25756.svg"
                 alt="icon filter">
             </div>
@@ -81,12 +81,208 @@
     </div>
   </section>
 
+  <section class="history-section">
+    <div class="container">
+      <div class="history-content">
+        <div class="orders-section">
+          <p class="title">Historique de vos commandes</p>
+          <div class="orders-list">
+            <article class="order pending">
+              <div class="order-profile">
+                <div 
+                  class="circle order-image"
+                  style='background: url("../../public/images/history/orders/User1.png")'></div>
+                <div class="circle order-image-status"></div>
+              </div>
+              <div class="order-content">
+                <p class="order-title">Commande N°365412</p>
+                <p class="order-description">Par <strong>Vous</strong> le <strong>02 février 2015</strong></p>
+                <p class="order-status">attention requise</p>
+              </div>
+              <button class="btn-action">
+                consulter
+                <i class="arrow-right"></i> 
+              </button>
+            </article>
+            <article class="order onDelivery">
+              <div class="order-profile">
+                  <div 
+                    class="circle order-image"
+                    style='background: url("../../public/images/history/orders/User2.png")'></div>
+                  <div class="circle order-image-status"></div>
+                </div>
+                <div class="order-content">
+                  <p class="order-title">Commande N°365412</p>
+                  <p class="order-description">Par <strong>Vous</strong> le <strong>02 février 2015</strong></p>
+                  <p class="order-status">attention requise</p>
+                </div>
+                <button class="btn-action">
+                  consulter
+                  <i class="arrow-right"></i> 
+                </button>
+            </article>
+            <article class="order accepted">
+              <div class="order-profile">
+                  <div 
+                    class="circle order-image"
+                    style='background: url("../../public/images/history/orders/User1.png")'></div>
+                  <div class="circle order-image-status"></div>
+                </div>
+                <div class="order-content">
+                  <p class="order-title">Commande N°365412</p>
+                  <p class="order-description">Par <strong>Vous</strong> le <strong>02 février 2015</strong></p>
+                  <p class="order-status">attention requise</p>
+                </div>
+                <button class="btn-action">
+                  consulter
+                  <i class="arrow-right"></i> 
+                </button>
+            </article>
+            <article class="order accepted">
+              <div class="order-profile">
+                <div 
+                  class="circle order-image"
+                  style='background: url("../../public/images/history/orders/User2.png")'></div>
+                <div class="circle order-image-status"></div>
+              </div>
+              <div class="order-content">
+                <p class="order-title">Commande N°365412</p>
+                <p class="order-description">Par <strong>Vous</strong> le <strong>02 février 2015</strong></p>
+                <p class="order-status">attention requise</p>
+              </div>
+              <button class="btn-action">
+                consulter
+                <i class="arrow-right"></i> 
+              </button>
+            </article>
+            <button 
+              id="seeHistory"
+              class="btn-action">
+              voir l'historique
+              <i class="arrow-right"></i> 
+            </button>
+          </div>      
+        </div>
+        <div class="training-section">
+            <p class="title">Formations liées</p>
+            <div class="training-list">
+              <article class="training">
+                <div class="circle training-image"></div>
+                <div class="training-content">
+                  <p class="training-description">force de vente</p>
+                  <p class="training-title">Optimiser vos campagnes publicitaires</p>
+                  <p class="training-status">recommandée</p>
+                </div>
+              </article>
+              <article class="training">
+                <div class="circle training-image"></div>
+                <div class="training-content">
+                  <p class="training-description">force de vente</p>
+                  <p class="training-title">Optimiser vos campagnes publicitaires</p>
+                  <p class="training-status">recommandée</p>
+                </div>
+              </article>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sales-section">
+    <div class="container">
+        <div class="sales-content">
+          <div class="sales-header">
+            <p class="sales-title">Ventes / Commandes</p>
+            <div class="sales-selects">
+                <div 
+                  id="model-select"
+                  class="sales-select">
+                  <label 
+                    id="label-filter"
+                    for="filter">modèle :</label>
+                  <select id="model">
+                    <option value="dog">Nom du modèle</option>
+                    <option value="cat">Cat</option>
+                  </select>
+                  <img 
+                    class="icon-filter"
+                    src="../public/images/svg/25756.svg"
+                    alt="icon filter">
+                </div>
+                <div 
+                  id="color-select"
+                  class="sales-select">
+                  <label 
+                    id="label-filter"
+                    for="filter">couleur :</label>
+                  <select id="color">
+                    <option value="dog">Noir</option>
+                    <option value="cat">Cat</option>
+                  </select>
+                  <img 
+                    class="icon-filter"
+                    src="../public/images/svg/25756.svg"
+                    alt="icon filter">
+                </div>
+            </div>
+        </div>
+        <img 
+          id="schema"
+          src="../public/images/sales/Groupe 10.png">
+    </div>    
+    </div>
+  </section>
+
+  <section class="models-section">
+    <div class="container">
+      <div class="models-content">
+        <div class="models-header">
+            <p class="models-title">Tous les modèles</p>
+            <div class="models-selects">
+              <div 
+                id="search"
+                class="models-select">
+                <input 
+                  id="search-input"
+                  type="text" 
+                  placeholder="Rechercher un modèle">
+              </div>
+              <div class="models-select">
+                <label 
+                  id="label-filter"
+                  for="filter">trier par :</label>
+                <select id="filter">
+                  <option value="dog">popularité</option>
+                  <option value="cat">Cat</option>
+                </select>
+                <img 
+                  class="icon-filter"
+                  src="../public/images/svg/25756.svg"
+                  alt="icon filter">
+              </div>
+            </div>
+        </div>
+        <div class="items-list">
+        </div>
+      </div>
+      <button 
+        id="seeAllModels"
+        class="btn-action">
+        <i class="arrow bottom"></i> 
+        voir tous les modèles
+      </button>
+    </div>
+  </section>
+
 </main>
 <!-- / main -->
 
   <script 
     type="text/template" 
     id="hero-template">
+    <span 
+      class="product-bg-color"
+      style="display: none"></span>
     <img
       class="product-img"
       src="../public/images/bikes/"
@@ -94,7 +290,7 @@
     <h3 class="product-title"></h3>
     <p class="product-description"></p>
     <p class="product-color"></p>
-    <button class="product-action">
+    <button class="btn-action">
       commander
       <i class="arrow-right"></i> 
     </button>
@@ -129,7 +325,7 @@
     <div class="product-content">
       <p class="product-title"></p>
       <p class="product-description"></p>
-      <button class="product-action">
+      <button class="btn-action">
           commander
           <i class="arrow-right"></i> 
         </button>
