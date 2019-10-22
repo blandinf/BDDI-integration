@@ -84,33 +84,36 @@ const List = {
         }
     },
 
-    toggleModels (event) {
-        const parentNode = event.target.parentNode;
-        const list = parentNode.querySelector('.items-list');
+    toggleModels (event, block = false) {
+        const section = document.querySelector('.models-section');
+        const list = section.querySelector('.items-list');
         let icon = document.createElement('i');
+        
+        let target = null;
+        event.target.classList.contains('.btn-action') ? target = event.target : target = document.querySelector('#seeAllModels');
 
-        if (event.target.classList.contains('active')) {
-            event.target.classList.remove('active');
+        if (!target.classList.contains('active') || block) {
+            target.classList.add('active');
+            icon.classList.add('arrow');
+            icon.classList.add('up');
+            target.textContent = 'voir moins de modèles';
+
+            for (let child of list.children) {
+                child.classList.add('active');
+            }
+        } else {
+            target.classList.remove('active');
             icon.classList.add('arrow');
             icon.classList.add('bottom');
-            event.target.textContent = 'voir tous les modèles';
+            target.textContent = 'voir tous les modèles';
 
             for (let child of list.children) {
                 if (child.previousSibling.tagName === 'DIV') {
                     child.classList.remove('active');
                 }
             }
-        } else {
-            event.target.classList.add('active');
-            icon.classList.add('arrow');
-            icon.classList.add('up');
-            event.target.textContent = 'voir moins de modèles';
-
-            for (let child of list.children) {
-                child.classList.add('active');
-            }
         }
-        event.target.prepend(icon);
+        target.prepend(icon);
 
         BUS.dispatchEvent(new CustomEvent('DOM::UPDATE', {detail: list}));
     },
@@ -118,11 +121,25 @@ const List = {
     filterModels (event) {
         const section = document.querySelector('.models-section');
         const products = section.querySelectorAll('.product');
-        for (let product of products) {
-            const title = product.querySelector('.product-title');
-            if (!title.textContent.indexOf(event.target.value) > -1) {
-                product.classList.remove('active');
-            } 
+        const itemsList = section.querySelector('.items-list');
+        const lists = itemsList.querySelectorAll('.list');
+        this.toggleModels(event, true);
+        if (event.target.value) {
+            for (let product of products) {
+                const title = product.querySelector('.product-title').textContent.toLowerCase();
+                if (title.indexOf(event.target.value.toLowerCase()) > -1) {
+                    product.style.display = 'flex';
+                } else {
+                    product.style.display = 'none';
+                }
+            }
+        } else {
+            this.toggleModels(event);
+            for (const list of Array.from(lists)) {
+                for (let child of list.children) {
+                    child.style.display = 'flex';
+                }
+            }
         }
     }
 };
