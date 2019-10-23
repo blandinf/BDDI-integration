@@ -59,16 +59,18 @@
   }
 }
 
-ul {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
-  padding: 0;
-  li {
-    list-style-type: none;
-    color: white;
-  }
-  li:last-child {
-    margin-right: 0;
+.nav {
+  ul {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    padding: 0;
+    li {
+      list-style-type: none;
+      color: white;
+    }
+    li:last-child {
+      margin-right: 0;
+    }
   }
 }
