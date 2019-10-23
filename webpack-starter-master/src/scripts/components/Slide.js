@@ -3,19 +3,24 @@ import { setInterval } from 'timers';
 
 const Slide = {
     init () {
+        this.listen();
+
+        // this.showCorrespondingItem();
+        this.launchAutoSlides();        
+    },
+
+    listen () {
         Array.from(document.querySelectorAll('.move')).map(item => {
             item.addEventListener('click', (e) => this.move(e));
         });
 
-        Array.from(document.querySelectorAll('.point')).map(item => {
-            item.addEventListener('click', (e) => this.activate(e));
-        });
-
         BUS.addEventListener('DOM::UPDATE', (e) => this.updateDisplayProperties(e.detail));
-
-        this.prepareSlides();
-        this.showCorrespondingItem();
-        this.launchAutoSlides();        
+        BUS.addEventListener('SLIDE::prepareSlides', () => this.prepareSlides());
+        BUS.addEventListener('SLIDE::AddPointsEvents', () => {
+            Array.from(document.querySelectorAll('.point')).map(item => {
+                item.addEventListener('click', (e) => this.activate(e));
+            });    
+        });
     },
 
     slide (list, direction, auto = false) {
@@ -69,7 +74,7 @@ const Slide = {
         const slidesPoints = document.querySelectorAll('.slide-points');
         const slides = Array.from(itemList).concat(Array.from(itemsList)).concat(Array.from(slidesPoints));
         for (let slide of slides) {
-            slide.children[0].classList.add('active');
+            slide.children[0] ? slide.children[0].classList.add('active') : null;
             if (!slide.classList.contains('slide-points')) {
                 this.updateDisplayProperties(slide);
             } else {

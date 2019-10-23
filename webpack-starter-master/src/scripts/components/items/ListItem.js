@@ -1,5 +1,5 @@
 
-import BUS from '../const/BUS';
+import BUS from '../../const/BUS';
 
 class ListItem {
     constructor () {

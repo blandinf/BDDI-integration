@@ -1,9 +1,9 @@
 import '../styles/index.scss';
 
 import Slide from './components/Slide';
-import List from './components/List';
+import List from './components/lists/List';
 
 const app = ((slide, list) => {
-    list.init();
     slide.init();
+    list.init();
 })(Slide, List);
