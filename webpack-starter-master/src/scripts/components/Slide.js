@@ -1,12 +1,18 @@
 import BUS from '../const/BUS';
-import { setInterval } from 'timers';
+import AutoSlide from './slides/AutoSlide';
+import SearchSlide from './slides/SearchSlide';
 
 const Slide = {
     init () {
         this.listen();
 
-        // this.showCorrespondingItem();
-        this.launchAutoSlides();        
+        const autoSlide = ((autoSlide) => {
+            autoSlide.init();
+        })(AutoSlide);
+
+        const searchSlide = ((searchSlide) => {
+            searchSlide.init();
+        })(SearchSlide);
     },
 
     listen () {
@@ -14,89 +20,34 @@ const Slide = {
             item.addEventListener('click', (e) => this.move(e));
         });
 
-        BUS.addEventListener('DOM::UPDATE', (e) => this.updateDisplayProperties(e.detail));
-        BUS.addEventListener('SLIDE::prepareSlides', () => this.prepareSlides());
-        BUS.addEventListener('SLIDE::AddPointsEvents', () => {
-            Array.from(document.querySelectorAll('.point')).map(item => {
-                item.addEventListener('click', (e) => this.activate(e));
-            });    
-        });
+        BUS.addEventListener('SLIDE::prepareSlides', () => this.prepareSliders());
     },
 
-    slide (list, direction, auto = false) {
-
+    slide (list, direction) {
         let currentItem = list.querySelector('.active');
-        const heroSection = document.querySelector('.hero-section');
 
-        if (!auto) {
-            if (direction === 'up') {
-                if (currentItem.nextElementSibling) {
-                    currentItem.classList.remove('active');
-                    currentItem.nextElementSibling.classList.add('active');
-                }
-            } else {
-                if (currentItem.previousElementSibling) {
-                    currentItem.classList.remove('active');
-                    currentItem.previousElementSibling.classList.add('active');
-                }
-            }    
-        } else {
-            if (!currentItem.nextElementSibling) {
-                currentItem = list.children[0];
-                currentItem.classList.add('active');
-                currentItem.nextElementSibling.classList.remove('active');
-                const bgColor = currentItem.querySelector('.product-bg-color');
-                bgColor ? heroSection.style.backgroundColor = bgColor.textContent : null;
-            } else {
+        if (direction === 'up') {
+            if (currentItem.nextElementSibling) {
                 currentItem.classList.remove('active');
                 currentItem.nextElementSibling.classList.add('active');
-                const bgColor = currentItem.nextElementSibling.querySelector('.product-bg-color');
-                bgColor ? heroSection.style.backgroundColor = bgColor.textContent : null;
             }
-        }
+        } else {
+            if (currentItem.previousElementSibling) {
+                currentItem.classList.remove('active');
+                currentItem.previousElementSibling.classList.add('active');
+            }
+        }    
         
-        this.updateDisplayProperties(list);
+        BUS.dispatchEvent(new CustomEvent('LIST::update', {detail: {list: list}}));
     },
 
-    updateDisplayProperties (list) {
-        for (let child of list.children) {
-            if (child.classList.contains('active')) {
-                child.style.display = 'flex';
-            } else {
-                child.style.display = 'none';
-            }
-        }
-    },
-
-    prepareSlides () {
+    prepareSliders () {
         const itemList = document.querySelectorAll('.item-list');
         const itemsList = document.querySelectorAll('.items-list');
-        const slidesPoints = document.querySelectorAll('.slide-points');
-        const slides = Array.from(itemList).concat(Array.from(itemsList)).concat(Array.from(slidesPoints));
+        const slides = Array.from(itemList).concat(Array.from(itemsList));
         for (let slide of slides) {
             slide.children[0] ? slide.children[0].classList.add('active') : null;
-            if (!slide.classList.contains('slide-points')) {
-                this.updateDisplayProperties(slide);
-            } else {
-                for (let point of slide.children) {
-                    const id = point.id.match(/\d+$/)[0];
-                    const productAssociated = document.querySelector('#product'+id);
-                    const productAssociatedImg = productAssociated.querySelector('.product-img');
-                    point.style.backgroundImage = "url("+ productAssociatedImg.src +")";
-                    if (productAssociatedImg.src.includes('bike2')){
-                        point.style.backgroundPosition = "1px 40%";
-                    }
-                }
-            }
-        }
-    },
-
-    launchAutoSlides () {
-        let slideAutos = document.querySelectorAll('.auto');
-        for (let slideAuto of slideAutos) {
-            setInterval(() => {
-                this.slide(slideAuto, null,  true);
-            }, 3000);
+            BUS.dispatchEvent(new CustomEvent('LIST::update', {detail: {list: slide}}));
         }
     },
 
@@ -124,34 +75,6 @@ const Slide = {
             this.slide(parentNodes, direction);
         }
     },
-
-    replaceActiveElement (el, list) {
-        for (const item of list.children) {
-            if (item.classList.contains('active')) {
-                item.classList.remove('active');
-            }
-        }
-        el.classList.add('active');
-    },
-
-    activate (event) {
-        const list = event.target.parentNode;
-        this.replaceActiveElement(event.target, list);
-        this.showCorrespondingItem();
-    },
-
-    showCorrespondingItem () {
-        const slidesPoints = document.querySelectorAll('.slide-points');
-
-        for (let slidePoints of slidesPoints) {
-            const currentActiveItem = slidePoints.querySelector('.active');
-            const id = currentActiveItem.id.match(/\d+$/)[0];
-            const productToDisplay = document.querySelector('#product'+id);
-            const list = productToDisplay.parentNode;
-            this.replaceActiveElement(productToDisplay, list);
-            this.updateDisplayProperties(list);
-        }
-    }
 };
 
 export default Slide;

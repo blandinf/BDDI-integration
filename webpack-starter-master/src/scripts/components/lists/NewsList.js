@@ -7,6 +7,7 @@ const NewsList = {
 
     init (models) {
         BUS.addEventListener('NEWS::TemplateInnerHTML', (e) => this.fillItemWithInnerHTML(e));
+        
         let self = this;
         let item;
         models.forEach(function(model, index) {
