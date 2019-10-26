@@ -58,7 +58,7 @@ const BestSellerList = {
             target.classList.add('active');
             icon.classList.add('arrow');
             icon.classList.add('up');
-            target.textContent = 'voir moins de modèles';
+            target.textContent = 'voir premiers modèles';
 
             for (let child of list.children) {
                 child.classList.add('active');
