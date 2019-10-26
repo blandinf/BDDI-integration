@@ -8,26 +8,30 @@
             width: 168px;
             height: 31px;
             border: 1px solid#D6D6D6;
+            color: #555555;
             margin-left: auto;
             display: flex;
             margin-right: auto;
             background-color: white;
+            text-align: right;
             text-indent: 20px;
-            text-align: center;
+            font-size: 14px;
+            padding: 0 9.8px 0 9.2px;
             margin-top: -15.5px;
             .arrow {
-              margin-left: 5px;
-              margin-top: 4px;
+              text-align: left;
               border: solid;
               border-width: 0 2px 2px 0;
               display: inline-block;
               padding: 2px;
               color: #555555;
               &.bottom {
+                margin-top: 4px;
                 transform: rotate(45deg);
                 -webkit-transform: rotate(45deg);
               }
               &.up {
+                margin-top: 7px;
                 transform: rotate(225deg);
                 -webkit-transform: rotate(225deg);
               }
@@ -50,7 +54,7 @@
                 height: 31px;
                 box-shadow: 1.5px 1px 0px rgba(0, 0, 0, 0.15);
                 border: 1px solid #a5a5a5;
-                text-indent: 38px;
+                text-indent: 39px;
                 padding: 0;
                 background-image:url(../../public/images/utils/Loupe.png); 
                 background-repeat: no-repeat; 
@@ -69,7 +73,7 @@
                 height: 32px;
                 box-shadow: 1.5px 1px 0px rgba(0,0,0,0.15);
                 border: 1px solid #a5a5a5;
-                text-indent: 10px;
+                padding: 0 10px 0 9px;
                 color: #555555;
                 -webkit-appearance: none;
                 -moz-appearance: none;

@@ -10,7 +10,7 @@
         "slug": "/model/0",
         "images": {
             "big": "bike1.png",
-            "small": "" 
+            "small": "bike1.png" 
         },
         "hero": {
             "active": true,
@@ -28,12 +28,12 @@
         "stock": 0,
         "slug": "/model/1",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike2.png",
+            "small": "bike2.png" 
         },
         "hero": {
-            "active": false,
-            "color": "#009f55"
+            "active": true,
+            "color": "#000000"
         },
         "best": false
     },
@@ -47,8 +47,8 @@
         "stock": 1,
         "slug": "/model/2",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike3.png",
+            "small": "bike3.png" 
         },
         "hero": {
             "active": false,
@@ -66,8 +66,8 @@
         "stock": 8,
         "slug": "/model/3",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike2.png",
+            "small": "bike2.png" 
         },
         "hero": {
             "active": false,
@@ -85,8 +85,8 @@
         "stock": 5,
         "slug": "/model/4",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike3.png",
+            "small": "bike3.png" 
         },
         "hero": {
             "active": false,
@@ -104,8 +104,8 @@
         "stock": 2,
         "slug": "/model/5",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike4.png",
+            "small": "bike4.png" 
         },
         "hero": {
             "active": false,
@@ -123,8 +123,8 @@
         "stock": 0,
         "slug": "/model/6",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -142,8 +142,8 @@
         "stock": 0,
         "slug": "/model/7",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike5.png",
+            "small": "bike5.png" 
         },
         "hero": {
             "active": false,
@@ -161,8 +161,8 @@
         "stock": 1,
         "slug": "/model/8",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -180,8 +180,8 @@
         "stock": 3,
         "slug": "/model/9",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -199,8 +199,8 @@
         "stock": 10,
         "slug": "/model/10",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -218,8 +218,8 @@
         "stock": 2,
         "slug": "/model/11",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -237,8 +237,8 @@
         "stock": 3,
         "slug": "/model/12",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -257,7 +257,7 @@
         "slug": "/model/13",
         "images": {
             "big": "bike2.png",
-            "small": "" 
+            "small": "bike2.png" 
         },
         "hero": {
             "active": true,
@@ -275,8 +275,8 @@
         "stock": 8,
         "slug": "/model/14",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -294,8 +294,8 @@
         "stock": 1,
         "slug": "/model/15",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -313,8 +313,8 @@
         "stock": 12,
         "slug": "/model/16",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -332,8 +332,8 @@
         "stock": 7,
         "slug": "/model/17",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -351,8 +351,8 @@
         "stock": 1,
         "slug": "/model/18",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -370,8 +370,8 @@
         "stock": 3,
         "slug": "/model/19",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -389,8 +389,8 @@
         "stock": 5,
         "slug": "/model/20",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -408,8 +408,8 @@
         "stock": 3,
         "slug": "/model/21",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -427,8 +427,8 @@
         "stock": 0,
         "slug": "/model/22",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -446,8 +446,8 @@
         "stock": 0,
         "slug": "/model/23",
         "images": {
-            "big": "",
-            "small": "" 
+            "big": "bike1.png",
+            "small": "bike1.png" 
         },
         "hero": {
             "active": false,
@@ -456,7 +456,7 @@
         "best": false
     },
     {
-        "title": "Left",
+        "title": "Modèle montée",
         "specs": {
             "size": "L",
             "engine": "Mécanique",
@@ -476,7 +476,7 @@
         "news": true
     },
     {
-        "title": "Nom du nouveal modèle",
+        "title": "Nom du nouveau modèle",
         "specs": {
             "size": "",
             "engine": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur",
@@ -496,7 +496,7 @@
         "news": true
     },
     {
-        "title": "Right",
+        "title": "Modèle flexible",
         "specs": {
             "size": "L",
             "engine": "Mécanique",

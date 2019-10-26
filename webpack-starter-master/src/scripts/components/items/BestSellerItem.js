@@ -13,6 +13,7 @@ class BestSellerItem {
         this.title = this.el.querySelector('.product-title');
         this.description = this.el.querySelector('.product-description');
         this.stock = this.el.querySelector('.stock');
+        this.stockBar = this.el.querySelector('.stock-bar');
 
         if (data) {
             this.fill(data);
@@ -25,6 +26,13 @@ class BestSellerItem {
         this.title.textContent = this.model.title;
         this.description.textContent = 'Taille ' + this.model.specs.size + ' - ' + this.model.specs.engine;
         this.stock.textContent = this.model.stock + ' en stock';
+        if (this.model.stock > 1) {
+            this.stock.classList.add('in-stock');
+            this.stockBar.classList.add('in-stock-bar');
+        } else {
+            this.stock.classList.add('out-stock');
+            this.stockBar.classList.add('out-stock-bar');
+        }
     }
 
     build (data) {

@@ -24,10 +24,11 @@
 .nav-links {
   li {
     opacity: 0.7;
-    margin-right: 1.875rem;
+    margin-right: 28px;
   }
   li.active {
     opacity: 1;
+    margin-right: 27px;
   }
   li.active::before {
     position: absolute;
@@ -42,7 +43,7 @@
 .login-links {
   justify-content: flex-end;
   .icon {
-    margin-left: 10px;
+    margin-left: 9px;
     font-size: 11px;
     padding: 0 3.25px;
     border-radius: 50%;
@@ -55,7 +56,7 @@
     height: 15px;
   }
   .disconnect {
-    margin-left: 19px;
+    margin-left: 18px;
   }
 }
 

@@ -1,4 +1,5 @@
 import '../styles/index.scss';
+import './utils/selectsOptions';
 
 import Slide from './components/Slide';
 import List from './components/lists/List';

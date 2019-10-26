@@ -22,7 +22,7 @@ class NewsItem {
         this.model = data;
         this.imgPath.src += this.model.images.big;
         this.title.textContent = this.model.title;
-        this.description.textContent = 'Taille ' + this.model.specs.size + ' - ' + this.model.specs.engine;
+        this.description.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non eleifend velit. Aliquam imperdiet mollis lorem a tempor. Duis condimentum sem eu risus faucibus, nec laoreet leo pellentesque. Etiam lorem ex, hendrerit nec erat at, gravida eleifend orci. ";
     }
 
     build (data, index) {

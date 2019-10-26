@@ -2,6 +2,7 @@
   height: 381px;
   position: relative;
   background: white;
+  color: #555555;
   .arrow {
     position: absolute;
     top: 55%;
@@ -26,9 +27,9 @@
         margin-left: 6px;
         width: 115px;
         height: 32px;
-        box-shadow: 1.5px 1px 0px rgba(0,0,0,0.15);
+        box-shadow: 2.12px 2.12px 0px rgba(0,0,0,0.15);
         border: 1px solid #a5a5a5;
-        text-indent: 10px;
+        padding: 0 10px;
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance:none;
@@ -60,7 +61,6 @@
         margin-left: 6px;
         width: 180px;
         background-color: #e6e6e6;
-        color: #555555;
         z-index: 5;
         .product-img-background {
           height: 105px;
@@ -76,10 +76,10 @@
           height: 115px;
           background-color: #efefef;
           .product-title {
-            padding: 15px 0 0 15px;
+            padding: 13px 0 0 14px;
             font-size: 16px;
             max-width: 140px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
           }
           .product-description {
             padding-left: 15px;
@@ -89,11 +89,11 @@
             position: absolute;
             width: 100%;
             .out-stock, .in-stock {
-              padding-bottom: 6px;
+              padding-bottom: 4px;
               font-size: 11px;
               font-weight: bold;
               text-align: right;
-              margin-right: 10px;
+              margin-right: 9.7px;
             }
             .out-stock-bar, .in-stock-bar {
               height: 4px;

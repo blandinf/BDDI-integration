@@ -1,11 +1,10 @@
 .news-section {
-  height: 469px;
   background-color: #0cff56;
   color: #212121;
   .news-title {
-    padding: 113px 0 50px 0;
+    padding: 113px 0 52px 0;
     font-size: 14px;
-    font-weight: bolder;
+    font-weight: bold;
     text-align: center;
   }
   .news-list {
@@ -18,7 +17,7 @@
         height: 100%;
         width: 350px;
         background-color: white;
-        margin: 0 50px 0 86px;
+        margin: 0 49px 0 86px;
       }
       .product-content {
         width: 350px;
@@ -26,16 +25,22 @@
         flex-direction: column;
         .product-title {
           font-size: 18px;
+          margin-bottom: 18px;
+        }
+        .product-description {
+          font-size: 14px;
         }
         .btn-action {
-          color: black;
-          border: 1px solid black;
+          color: #212121;
+          border: 1px solid #212121;
+          margin-left: 1px;
         }
       }
     }
   }
   .slide-points {
     margin-top: 38px;
+    padding-bottom: 50px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -45,7 +50,7 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background-color: #000000;
+      background-color: #212121;
       border: 1px solid #ffffff;
       background-position: center;
       background-size: cover;

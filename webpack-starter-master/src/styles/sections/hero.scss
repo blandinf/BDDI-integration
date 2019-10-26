@@ -3,7 +3,7 @@
   height: 500px;
   background-color: #009f55;
   .hero-content {
-    padding-top: 9.375rem;
+    padding-top: 148px;
     height: 300px;
     .product {
       height: 100%;
@@ -13,13 +13,14 @@
         border: 1px solid white;
         color: white;
         z-index: 2;
+        font-size: 14px;
       }
       .product-img {
         position: absolute;
         height: 671px;
-        width: 1066px;
-        margin-top: 9px;
-        margin-left: -78px;
+        width: 1120px;
+        margin-top: 6px;
+        margin-left: -82px;
       }
     }
     p, h3 {

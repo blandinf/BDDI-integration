@@ -4,7 +4,7 @@ import BUS from '../../const/BUS';
 
 const AutoSlide = {
     init() {
-        this.launchAutoSliders();        
+        // this.launchAutoSliders();        
     },
 
     launchAutoSliders () {
@@ -12,7 +12,7 @@ const AutoSlide = {
         for (let slider of sliders) {
             interval(() => {
                 this.slide(slider);
-            }, 3000, 10);
+            }, 3000, 5);
         }
     },
 
@@ -21,9 +21,9 @@ const AutoSlide = {
         const heroSection = document.querySelector('.hero-section');
 
         if (!currentItem.nextElementSibling) {
+            currentItem.classList.remove('active');
             currentItem = list.children[0];
             currentItem.classList.add('active');
-            currentItem.nextElementSibling.classList.remove('active');
             const bgColor = currentItem.querySelector('.product-bg-color');
             bgColor ? heroSection.style.backgroundColor = bgColor.textContent : null;
         } else {
