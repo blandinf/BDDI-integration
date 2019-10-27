@@ -1,7 +1,7 @@
 import BUS from '../../const/BUS';
 
-
-const AutoSlide = {
+//click on button (point) => display associated model
+const SearchSlide = {
     slides: document.querySelectorAll('.slide-points'),
 
     init() {
@@ -21,7 +21,6 @@ const AutoSlide = {
     activate (event) {
         const list = event.target.parentNode;
         list.classList.remove('auto');
-
         BUS.dispatchEvent(new CustomEvent('SLIDE::replaceActiveElement', {detail: {el: event.target, list: list}}));
         this.showCorrespondingItem();
     },
@@ -53,4 +52,4 @@ const AutoSlide = {
     },
 };
 
-export default AutoSlide;
+export default SearchSlide;
