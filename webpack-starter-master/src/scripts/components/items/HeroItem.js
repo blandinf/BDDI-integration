@@ -15,6 +15,7 @@ class HeroItem {
         this.title = this.el.querySelector('.product-title');
         this.description = this.el.querySelector('.product-description');
         this.color = this.el.querySelector('.product-color');
+        this.action = this.el.querySelector('.btn-action');
 
         if (data) {
             this.fill(data);
@@ -30,6 +31,8 @@ class HeroItem {
         this.title.textContent = this.model.title;
         this.description.textContent = 'Taille ' + this.model.specs.size + ' - ' + this.model.specs.engine;
         this.color.textContent = this.model.specs.color;
+        this.action.href = this.model.slug;
+        console.log(this.action);
     }
 
     build (data) {

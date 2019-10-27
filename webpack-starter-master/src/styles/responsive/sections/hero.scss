@@ -1,0 +1,21 @@
+@media (max-width: 1024px) {
+  .hero-section {
+    .product {
+      .product-img {
+        width: 1000px !important;
+        margin-left: -40px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    .product {
+      .product-img {
+        width: 900px !important;
+      }
+    }
+  }
+}
+

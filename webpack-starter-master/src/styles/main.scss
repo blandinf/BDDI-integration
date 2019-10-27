@@ -42,10 +42,10 @@ body {
   height: 31px;
   font-size: 14px;
   padding: 0 10px 0 9px;
-  text-align: left;
+  align-items: center;
 
   .arrow-right {
-    margin: auto 0 auto 42px;
+    margin: auto 0 auto auto;
     border: solid;
     border-width: 0 2px 2px 0;
     display: inline-block;
@@ -67,3 +67,5 @@ body {
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: #555555;
 }
+
+a {text-decoration: none;}

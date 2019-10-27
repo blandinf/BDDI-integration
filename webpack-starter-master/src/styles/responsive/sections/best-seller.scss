@@ -1,0 +1,34 @@
+@media screen and (min-width: 1920px) {
+  .best-seller-section {
+    .arrow {
+      &.left {
+        left: 380px;
+      }
+      &.right {
+        right: 380px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .best-seller-section {
+    .arrow {
+      &.left {
+        left: 110px;
+      }
+      &.right {
+        right: 110px;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .best-seller-section {
+    .best-seller-title {
+      font-size: 28px !important;
+    }
+  }
+}
+

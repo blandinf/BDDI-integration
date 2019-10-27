@@ -4,9 +4,13 @@ import BUS from '../../const/BUS';
 const BestSellerList = {
     section: document.querySelector('.best-seller-section'),
     template: document.querySelector('#best-seller-template'),
+    xDown: null,
+    yDown: null,
 
     init (models) {
         BUS.addEventListener('BEST::TemplateInnerHTML', (e) => this.fillItemWithInnerHTML(e));
+        document.addEventListener('touchstart', (e) => this.handleTouchStart(e));
+        document.addEventListener('touchmove', (e) => this.handleTouchMove(e));
         this.preset(models);
 
         let item;
@@ -39,6 +43,36 @@ const BestSellerList = {
                 list.append(item.el);
             }
         }
+    },
+
+    getTouches (event) {
+        return event.touches || event.originalEvent.touches;
+    },
+
+    handleTouchStart (event) {
+        const firstTouch = this.getTouches(event)[0];
+        this.xDown = firstTouch.clientX;
+        this.yDown = firstTouch.clientY;
+    },
+
+    handleTouchMove (event) {
+        if ( ! this.xDown || ! this.yDown ) {
+            return;
+        }
+
+        let xUp = event.touches[0].clientX;
+        let yUp = event.touches[0].clientY;
+
+        let xDiff = this.xDown - xUp;
+        let yDiff = this.yDown - yUp;
+
+        if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+            let direction;
+            xDiff > 0 ? direction = 'up' : direction = 'down';
+            BUS.dispatchEvent(new CustomEvent('SLIDE::move', {detail: {list: this.section.querySelector('.items-list'), direction: direction }}));
+        }
+        this.xDown = null;
+        this.yDown = null;
     }
 
 };

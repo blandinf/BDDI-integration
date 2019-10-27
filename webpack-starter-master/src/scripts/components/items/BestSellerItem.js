@@ -15,6 +15,7 @@ class BestSellerItem {
         this.description = this.el.querySelector('.product-description');
         this.stock = this.el.querySelector('.stock');
         this.stockBar = this.el.querySelector('.stock-bar');
+        this.action = this.el.querySelector('a');
 
         if (data) {
             this.fill(data);
@@ -29,6 +30,7 @@ class BestSellerItem {
         this.title.textContent = this.model.title;
         this.description.textContent = 'Taille ' + this.model.specs.size + ' - ' + this.model.specs.engine;
         this.stock.textContent = this.model.stock + ' en stock';
+        this.action.href = this.model.slug;
         if (this.model.stock > 1) {
             this.stock.classList.add('in-stock');
             this.stockBar.classList.add('in-stock-bar');
@@ -47,7 +49,7 @@ class BestSellerItem {
 
     truncate () {
         truncate(this.title, 50);
-        truncate(this.description, 25);
+        truncate(this.description, 28);
     }
 }
 

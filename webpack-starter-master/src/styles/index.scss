@@ -10,6 +10,11 @@
 @import 'sections/sales';
 @import 'sections/models';
 
-
-
-
+@import 'responsive/main';
+@import 'responsive/footer';
+@import 'responsive/header';
+@import 'responsive/sections/hero.scss';
+@import 'responsive/sections/best-seller';
+@import 'responsive/sections/news';
+@import 'responsive/sections/history';
+@import 'responsive/sections/sales';

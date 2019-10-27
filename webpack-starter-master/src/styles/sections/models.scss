@@ -75,6 +75,7 @@
                 border: 1px solid #a5a5a5;
                 padding: 0 10px 0 9px;
                 color: #555555;
+                border-radius: unset;
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 appearance:none;
@@ -105,8 +106,10 @@
           margin-left: 6px;
           width: 180px;
           background-color: #e6e6e6;
-          color: #555555;
           z-index: 5;
+          a {
+            color: #555555;
+          }
           .product-img-background {
             height: 105px;
             display: flex;

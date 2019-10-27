@@ -20,6 +20,7 @@ const Slide = {
             item.addEventListener('click', (e) => this.move(e));
         });
 
+        BUS.addEventListener('SLIDE::move', (e) => this.move(e));
         BUS.addEventListener('SLIDE::prepareSlides', () => this.prepareSliders());
     },
 
@@ -53,12 +54,15 @@ const Slide = {
 
     move (event) {
         let direction;
-        if (event.target.classList.contains('move')) {
-            event.target.classList.contains('up') ? direction = 'up' : direction = 'down';
-        }
+        let list;
 
-        let parentNodes = event.target.parentNode;
-        if (!parentNodes.classList.contains('slide-points')) {
+        if (isNaN(event.detail)) {
+            direction = event.detail.direction;
+            list = event.detail.list;
+        } else {
+            event.target.classList.contains('up') ? direction = 'up' : direction = 'down';
+
+            let parentNodes = event.target.parentNode;
             let container = parentNodes.querySelector('.container');
             if (!container) {
                 if (!parentNodes.parentNode.classList.contains('container')) {
@@ -67,13 +71,9 @@ const Slide = {
                     container = parentNodes.parentNode;
                 }
             }
-            let list;
             container.querySelector('.items-list') ? list = container.querySelector('.items-list') : list = container.querySelector('.item-list');
-    
-            this.slide(list, direction);
-        } else {
-            this.slide(parentNodes, direction);
         }
+        this.slide(list, direction);
     },
 };
 

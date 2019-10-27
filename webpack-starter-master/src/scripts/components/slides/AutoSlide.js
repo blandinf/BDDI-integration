@@ -12,7 +12,7 @@ const AutoSlide = {
         for (let slider of sliders) {
             interval(() => {
                 this.slide(slider);
-            }, 2600, 50);
+            }, 3600, 50);
         }
     },
 

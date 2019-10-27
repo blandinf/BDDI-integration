@@ -13,6 +13,7 @@ class NewsItem {
         this.imgPath = this.el.querySelector('.product-img');
         this.title = this.el.querySelector('.product-title');
         this.description = this.el.querySelector('.product-description');
+        this.action = this.el.querySelector('.btn-action');
 
         if (data) {
             this.fill(data);
@@ -25,7 +26,8 @@ class NewsItem {
         this.model = data;
         this.imgPath.src += this.model.images.big;
         this.title.textContent = this.model.title;
-        this.description.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non eleifend velit. Aliquam imperdiet mollis lorem a tempor. Duis condimentum sem eu risus faucibus, nec laoreet leo pellentesque. Etiam lorem ex, hendrerit nec erat at, gravida eleifend orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non eleifend velit. Aliquam imperdiet mollis lorem a tempor. Duis condimentum sem eu risu";
+        this.action.href = this.model.slug;
+        this.description.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non eleifend velit. Aliquam imperdiet mollis lorem a tempor. Duis condimentum sem eu risus faucibus, nec laoreet leo pellentesque. Etiam lorem ex, hendrerit nec erat at, gravida eleifend orci.";
     }
 
     build (data, index) {
