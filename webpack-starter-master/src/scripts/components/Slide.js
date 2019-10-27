@@ -22,6 +22,7 @@ const Slide = {
 
         BUS.addEventListener('SLIDE::move', (e) => this.move(e));
         BUS.addEventListener('SLIDE::prepareSlides', () => this.prepareSliders());
+        BUS.addEventListener('SLIDE::replaceActiveElement', (e) => this.replaceActiveElement(e));
     },
 
     slide (list, direction) {
@@ -71,9 +72,22 @@ const Slide = {
                     container = parentNodes.parentNode;
                 }
             }
-            container.querySelector('.items-list') ? list = container.querySelector('.items-list') : list = container.querySelector('.item-list');
+            if (container.querySelector('.items-list')) {
+                list = container.querySelector('.items-list');
+            } else {
+                list = container.querySelector('.item-list');
+            }
         }
         this.slide(list, direction);
+    },
+
+    replaceActiveElement (event) {
+        for (const item of event.detail.list.children) {
+            if (item.classList.contains('active')) {
+                item.classList.remove('active');
+            }
+        }
+        event.detail.el.classList.add('active');
     },
 };
 

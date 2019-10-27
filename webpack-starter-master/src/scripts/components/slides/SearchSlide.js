@@ -21,7 +21,8 @@ const AutoSlide = {
     activate (event) {
         const list = event.target.parentNode;
         list.classList.remove('auto');
-        this.replaceActiveElement(event.target, list);
+
+        BUS.dispatchEvent(new CustomEvent('SLIDE::replaceActiveElement', {detail: {el: event.target, list: list}}));
         this.showCorrespondingItem();
     },
 
@@ -31,18 +32,9 @@ const AutoSlide = {
             const id = currentActiveItem.id.match(/\d+$/)[0];
             const productToDisplay = document.querySelector('#product'+id);
             const list = productToDisplay.parentNode;
-            this.replaceActiveElement(productToDisplay, list);
+            BUS.dispatchEvent(new CustomEvent('SLIDE::replaceActiveElement', {detail: {el: productToDisplay, list: list}}));
             BUS.dispatchEvent(new CustomEvent('LIST::update', {detail: {list: list}}));
         }
-    },
-
-    replaceActiveElement (el, list) {
-        for (const item of list.children) {
-            if (item.classList.contains('active')) {
-                item.classList.remove('active');
-            }
-        }
-        el.classList.add('active');
     },
 
     prepare () {

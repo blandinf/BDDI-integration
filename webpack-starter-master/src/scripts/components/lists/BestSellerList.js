@@ -8,9 +8,7 @@ const BestSellerList = {
     yDown: null,
 
     init (models) {
-        BUS.addEventListener('BEST::TemplateInnerHTML', (e) => this.fillItemWithInnerHTML(e));
-        document.addEventListener('touchstart', (e) => this.handleTouchStart(e));
-        document.addEventListener('touchmove', (e) => this.handleTouchMove(e));
+        this.listen();
         this.preset(models);
 
         let item;
@@ -19,6 +17,13 @@ const BestSellerList = {
             item.build(model);
             this.appendItemInRightList(item);
         }
+    },
+
+    listen () {
+        BUS.addEventListener('BEST::TemplateInnerHTML', (e) => this.fillItemWithInnerHTML(e));
+        BUS.addEventListener('LIST::updated', () => this.handleArrows());
+        this.section.querySelector('.items-list').addEventListener('touchstart', (e) => this.handleTouchStart(e));
+        this.section.querySelector('.items-list').addEventListener('touchmove', (e) => this.handleTouchMove(e));
     },
 
     fillItemWithInnerHTML (event) {
@@ -73,6 +78,37 @@ const BestSellerList = {
         }
         this.xDown = null;
         this.yDown = null;
+    },
+
+    getCurrentList () {
+        const lists = this.section.querySelector('.items-list').querySelectorAll('.list');
+        let currentList;
+        for (let list of lists) {
+            if (list.classList.contains('active')) {
+                currentList = list;
+            }
+        }
+
+        return currentList;
+    },
+
+    handleArrows () {
+        const leftArrow = this.section.querySelector('.left');
+        const rightArrow = this.section.querySelector('.right');
+        const currentList = this.getCurrentList();
+        if (currentList) {
+            if (!currentList.previousElementSibling) {
+                leftArrow.style.display = 'none';
+            } else {
+                leftArrow.style.display = 'flex';
+            }
+
+            if (!currentList.nextElementSibling) {
+                rightArrow.style.display = 'none';
+            } else {
+                rightArrow.style.display = 'flex';
+            }
+        }
     }
 
 };
