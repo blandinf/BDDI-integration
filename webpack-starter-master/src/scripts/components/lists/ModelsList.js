@@ -32,7 +32,7 @@ const BestSellerList = {
         let i;
         for (i=0; i < divsNumberRequire; i++) {
             const div = document.createElement('div');
-            div.classList.add('best-seller-list');
+            div.classList.add('products-list');
             div.classList.add('list');
             this.section.querySelector('.items-list').append(div);
         }

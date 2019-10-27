@@ -4,162 +4,67 @@
     color: #555555;
     .container {
       padding-bottom: 100px;
-       #seeAllModels {
-            width: 168px;
-            height: 31px;
-            border: 1px solid#D6D6D6;
-            color: #555555;
-            margin-left: auto;
-            display: flex;
-            margin-right: auto;
-            background-color: white;
-            text-align: right;
-            text-indent: 20px;
-            font-size: 14px;
-            padding: 0 9.8px 0 9.2px;
-            margin-top: -15.5px;
-            .arrow {
-              text-align: left;
-              border: solid;
-              border-width: 0 2px 2px 0;
-              display: inline-block;
-              padding: 2px;
-              color: #555555;
-              &.bottom {
-                margin-top: 4px;
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-              }
-              &.up {
-                margin-top: 7px;
-                transform: rotate(225deg);
-                -webkit-transform: rotate(225deg);
-              }
-            }
-        }
-    }
-    .models-content {
-      padding-bottom: 50px;
-      border-bottom: 1px solid #D6D6D6;
-      .models-title {
-        font-size: 24px;
-      }
-      .models-selects {
+      .models-content {
+        padding-bottom: 50px;
+        border-bottom: 1px solid #D6D6D6;
+        .models-header {
           display: flex;
           flex-direction: row;
-          #search {
+          justify-content: space-between;
+          .models-selects {
+            display: flex;
+            flex-direction: row;
+            #search {
               margin-right: 29px;
               input {
                 width: 254px;
-                height: 31px;
-                box-shadow: 1.5px 1px 0px rgba(0, 0, 0, 0.15);
-                border: 1px solid #a5a5a5;
+                border-color: #a5a5a5;
                 text-indent: 39px;
                 padding: 0;
-                background-image:url(../../public/images/utils/Loupe.png); 
-                background-repeat: no-repeat; 
+                background-image:url(../../public/images/utils/Loupe.png);
+                background-repeat: no-repeat;
                 background-position: 10px 5px;
                 background-size: 20px 20px;
               }
+            }
+            .input-select {
+              width: 113px;
+              border-color: #A6A6A6;
+              color: #555555;
+            }
           }
-          .models-select {
-            position: relative;
-            #label-filter {
-                font-size: 14px;
-            }
-            #filter {
-                margin-left: 6px;
-                width: 115px;
-                height: 32px;
-                box-shadow: 1.5px 1px 0px rgba(0,0,0,0.15);
-                border: 1px solid #a5a5a5;
-                padding: 0 10px 0 9px;
-                color: #555555;
-                border-radius: unset;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance:none;
-            }
-            .icon-filter {
-                position: absolute;
-                top: 12px;
-                right: 10px;
-                width: 10px;
-                height: 10px;
-            }
         }
-    }
-      .models-header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
       }
-      .best-seller-list, .models-list {
-        margin-top: 50px;
+      #seeAllModels {
+        width: 168px;
+        height: 31px;
+        border: 1px solid#D6D6D6;
+        color: #555555;
+        margin-left: auto;
         display: flex;
-        flex-direction: row;
-        .product:first-child {
-          margin-left: 0px;
-        }
-        .product {
-          flex-direction: column;
-          margin-left: 6px;
-          width: 180px;
-          background-color: #e6e6e6;
-          z-index: 5;
-          a {
-            color: #555555;
+        margin-right: auto;
+        background-color: white;
+        text-align: right;
+        text-indent: 20px;
+        font-size: 14px;
+        padding: 0 9.8px 0 9.2px;
+        margin-top: -15.5px;
+        .arrow {
+          text-align: left;
+          border: solid;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 2px;
+          color: #555555;
+          &.bottom {
+            margin-top: 4px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
           }
-          .product-img-background {
-            height: 105px;
-            display: flex;
-            .product-img {
-              width: 144px;
-              height: 88px;
-              margin: auto;
-            }
-          }
-          .product-background {
-            position: relative;
-            height: 115px;
-            background-color: #efefef;
-            .product-title {
-              padding: 15px 0 0 15px;
-              font-size: 16px;
-              max-width: 140px;
-              margin-bottom: 10px;
-              overflow: hidden;
-            }
-            .product-description {
-              padding: 0 15px 0 15px;
-            }
-            .product-footer {
-              bottom: 0;
-              position: absolute;
-              width: 100%;
-              .out-stock, .in-stock {
-                padding-bottom: 6px;
-                font-size: 11px;
-                font-weight: bold;
-                text-align: right;
-                margin-right: 10px;
-              }
-              .out-stock-bar, .in-stock-bar {
-                height: 4px;
-              }
-              .out-stock {
-                color: #ff3f0c;
-              }
-              .out-stock-bar {
-                background-color: #ff3f0c;
-              }
-              .in-stock {
-                color: #d6d6d6;
-              }
-              .in-stock-bar {
-                background-color: #d6d6d6;
-              }
-            }
+          &.up {
+            margin-top: 7px;
+            transform: rotate(225deg);
+            -webkit-transform: rotate(225deg);
           }
         }
       }

@@ -15,10 +15,12 @@ const AutoSlide = {
             });    
         });      
         BUS.addEventListener('SLIDE::prepareSlides', () => this.prepare());
+        BUS.addEventListener('SEARCH-SLIDE::show', () => this.showCorrespondingItem());
     },
 
     activate (event) {
         const list = event.target.parentNode;
+        list.classList.remove('auto');
         this.replaceActiveElement(event.target, list);
         this.showCorrespondingItem();
     },

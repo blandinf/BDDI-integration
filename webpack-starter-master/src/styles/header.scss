@@ -12,66 +12,61 @@
       display: flex;
       justify-content: space-between;
       flex-basis: 100%;
+      ul {
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        padding: 0;
+        li {
+          list-style-type: none;
+          color: white;
+        }
+        li:last-child {
+          margin-right: 0;
+        }
+      }
+      .nav-links {
+        li {
+          opacity: 0.7;
+          margin-right: 28px;
+        }
+        li.active {
+          opacity: 1;
+          margin-right: 27px;
+        }
+        li.active::before {
+          position: absolute;
+          bottom: 0;
+          content: '';
+          width: 48px;
+          height: 5px;
+          background-color: white;
+        }
+      }
+      .login-links {
+        justify-content: flex-end;
+        .icon {
+          margin-left: 9px;
+          font-size: 11px;
+          padding: 0 3.25px;
+          border-radius: 50%;
+          background-color: #ffffff;
+          color: #1f522a;
+        }
+        .pipe {
+          margin-left: 19px;
+          width: 1px;
+          height: 15px;
+        }
+        .disconnect {
+          margin-left: 18px;
+        }
+      }
     }
   }
   .border-bottom {
     height: 1px;
     width: 100%;
     background-color: white;
-  }
-}
-
-.nav-links {
-  li {
-    opacity: 0.7;
-    margin-right: 28px;
-  }
-  li.active {
-    opacity: 1;
-    margin-right: 27px;
-  }
-  li.active::before {
-    position: absolute;
-    bottom: 0;
-    content: '';
-    width: 48px;
-    height: 5px;
-    background-color: white;
-  }
-}
-
-.login-links {
-  justify-content: flex-end;
-  .icon {
-    margin-left: 9px;
-    font-size: 11px;
-    padding: 0 3.25px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    color: #1f522a;
-  }
-  .pipe {
-    margin-left: 19px;
-    width: 1px;
-    height: 15px;
-  }
-  .disconnect {
-    margin-left: 18px;
-  }
-}
-
-.nav {
-  ul {
-    display: flex;
-    flex-direction: row;
-    text-decoration: none;
-    padding: 0;
-    li {
-      list-style-type: none;
-      color: white;
-    }
-    li:last-child {
-      margin-right: 0;
-    }
   }
 }

@@ -1,6 +1,5 @@
 .sales-section {
     background-color: #FF3F0C;
-    // height: 440.89px;
     height: 520px;
     color: white;
     .sales-content {
@@ -18,35 +17,11 @@
                 position: relative;
                 display: flex;
                 flex-direction: row;
-                .sales-select {
-                    position: relative;
-                    #label-filter {
-                        font-size: 14px;
-                    }
-                    select {
-                        margin-left: 6px;
-                        width: 120px;
-                        height: 30px;
-                        box-shadow: 2.12px 2.12px 0px rgba(0,0,0,0.15);
-                        border: 1px solid white;
-                        color: white;
-                        background: inherit;
-                        border-radius: unset;
-                        padding: 0 10px 0 9px;
-                        -webkit-appearance: none;
-                        -moz-appearance: none;
-                        appearance:none;
-                        option {
-                            width: 84px;
-                            color:black;
-                        }
-                    }
-                    .icon-filter {
-                        position: absolute;
-                        top: 10px;
-                        right: 10px;
-                        height: 10px;
-                    }
+                .input-select {
+                    width: 120px;
+                    border-color: white;
+                    color: white;
+                    background: inherit;
                 }
                 #model-select {
                     margin-right: 29px;

@@ -40,19 +40,17 @@
     </div>
   </section>
 
-  <section class="best-seller-section">
+  <section class="best-seller-section products-section">
     <img
       class="arrow left move down"
       src="../public/images/best-seller/tools/arrow-left.png">
     <div class="container">
-      <div class="best-seller-content">
-        <div class="best-seller-header">
-            <p class="best-seller-title">Best-seller</p>
-            <div class="best-seller-select">
-              <label 
-                id="label-filter"
-                for="filter">trier par :</label>
-              <select id="filter">
+      <div class="best-seller-content products-content">
+        <div class="products-header">
+            <p class="products-title">Best-seller</p>
+            <div class="select">
+              <label class="label-select">trier par :</label>
+              <select class="input-select">
                 <option value="dog">stock</option>
                 <option value="cat">Cat</option>
               </select>
@@ -76,7 +74,7 @@
       <p class="news-title">Nouveautés</p>
       <div class="news-list item-list">
       </div>
-      <div class="slide-points">
+      <div class="slide-points auto">
       </div>
     </div>
   </section>
@@ -194,13 +192,11 @@
           <div class="sales-header">
             <p class="sales-title">Ventes / Commandes</p>
             <div class="sales-selects">
-                <div 
+                <div
                   id="model-select"
-                  class="sales-select">
-                  <label 
-                    id="label-filter"
-                    for="filter">modèle :</label>
-                  <select id="model">
+                  class="select">
+                  <label class="label-select">modèle :</label>
+                  <select class="input-select">
                     <option value="dog">Nom du modèle</option>
                     <option value="cat">Cat</option>
                   </select>
@@ -211,11 +207,9 @@
                 </div>
                 <div 
                   id="color-select"
-                  class="sales-select">
-                  <label 
-                    id="label-filter"
-                    for="filter">couleur :</label>
-                  <select id="color">
+                  class="select">
+                  <label class="label-select">couleur :</label>
+                  <select class="input-select">
                     <option value="dog">Noir</option>
                     <option value="cat">Cat</option>
                   </select>
@@ -233,25 +227,24 @@
     </div>
   </section>
 
-  <section class="models-section">
+  <section class="models-section products-section">
     <div class="container">
-      <div class="models-content">
-        <div class="models-header">
-            <p class="models-title">Tous les modèles</p>
+      <div class="models-content products-content">
+        <div class="models-header products-header">
+            <p class="products-title">Tous les modèles</p>
             <div class="models-selects">
               <div 
                 id="search"
-                class="models-select">
+                class="select">
                 <input 
                   id="search-input"
+                  class="input-select"
                   type="text" 
                   placeholder="Rechercher un modèle">
               </div>
-              <div class="models-select">
-                <label 
-                  id="label-filter"
-                  for="filter">trier par :</label>
-                <select id="filter">
+              <div class="select">
+                <label class="label-select">trier par :</label>
+                <select class="input-select">
                   <option value="dog">popularité</option>
                   <option value="cat">Cat</option>
                 </select>

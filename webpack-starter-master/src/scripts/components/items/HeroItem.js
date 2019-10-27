@@ -32,7 +32,6 @@ class HeroItem {
         this.description.textContent = 'Taille ' + this.model.specs.size + ' - ' + this.model.specs.engine;
         this.color.textContent = this.model.specs.color;
         this.action.href = this.model.slug;
-        console.log(this.action);
     }
 
     build (data) {

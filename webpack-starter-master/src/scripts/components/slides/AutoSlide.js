@@ -11,7 +11,9 @@ const AutoSlide = {
         let sliders = document.querySelectorAll('.auto');
         for (let slider of sliders) {
             interval(() => {
-                this.slide(slider);
+                if (slider.classList.contains('auto')) {
+                    this.slide(slider);
+                }
             }, 3600, 50);
         }
     },
@@ -32,8 +34,12 @@ const AutoSlide = {
             const bgColor = currentItem.nextElementSibling.querySelector('.product-bg-color');
             bgColor ? heroSection.style.backgroundColor = bgColor.textContent : null;
         }
-        
-        BUS.dispatchEvent(new CustomEvent('LIST::update', {detail: {list: list}}));
+
+        if(!list.classList.contains('slide-points')) {
+            BUS.dispatchEvent(new CustomEvent('LIST::update', {detail: {list: list}}));
+        } else {
+            BUS.dispatchEvent(new CustomEvent('SEARCH-SLIDE::show'));
+        }
     },
 };
 

@@ -23,12 +23,10 @@ body {
     margin-bottom: 13px;
     font-size: 14px;
   }
-
   .product-description {
     font-size: 11px;
     margin-bottom: 1px;
   }
-
   .product-color {
     font-size: 11px;
   }
@@ -69,3 +67,27 @@ body {
 }
 
 a {text-decoration: none;}
+
+.select {
+  position: relative;
+  .label-select {
+    font-size: 14px;
+  }
+  .input-select {
+    margin-left: 6px;
+    height: 30px;
+    box-shadow: 2.12px 2.12px 0px rgba(0,0,0,0.15);
+    border: 1px solid;
+    padding: 0 10px 0 9px;
+    border-radius: unset;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance:none;
+  }
+  .icon-filter {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 10px;
+  }
+}
