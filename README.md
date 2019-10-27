@@ -17,7 +17,7 @@
 ### Décisions :
 
 * margin-right équivalent pour chaque li sur le footer (La maquette ne comprend pas les mêmes écarts entre chaque)
-* - de 1024 : plus de fleches, uniquement swipe
+* moins de 1024 : plus de fleches, uniquement swipe
 
 * ex d'un model : (ajout de color dans hero)
 
