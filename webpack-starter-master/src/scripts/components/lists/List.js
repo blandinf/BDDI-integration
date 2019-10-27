@@ -1,6 +1,4 @@
-
 import BUS from '../../const/BUS';
-import ListItem from '../items/ListItem';
 import HeroList from '../lists/HeroList';
 import BestSellerList from '../lists/BestSellerList';
 import NewsList from '../lists/NewsList';
@@ -24,21 +22,12 @@ const List = {
             const bestModels = modelsParsed.filter(model => model.best);
             const newsModels = modelsParsed.filter(model => model.news);
 
-            const heroList = ((heroList) => {
+            const lists = ((heroList, bestSellerList, newsList, modelsList) => {
                 heroList.init(heroModels);
-            })(HeroList);
-
-            const bestSellerList = ((bestSellerList) => {
                 bestSellerList.init(bestModels);
-            })(BestSellerList);
-
-            const newsList = ((newsList) => {
                 newsList.init(newsModels);
-            })(NewsList);
-
-            const modelsList = ((modelsList) => {
                 modelsList.init(bestModels);
-            })(ModelsList);
+            })(HeroList, BestSellerList, NewsList, ModelsList);
 
             BUS.dispatchEvent(new CustomEvent('SLIDE::prepareSlides'));
         } else {

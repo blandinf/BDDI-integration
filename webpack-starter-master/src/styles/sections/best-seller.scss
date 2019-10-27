@@ -77,12 +77,15 @@
           background-color: #efefef;
           .product-title {
             padding: 13px 0 0 14px;
+            margin-right: 0;
             font-size: 16px;
             max-width: 140px;
             margin-bottom: 8px;
+            overflow: hidden;
           }
           .product-description {
-            padding-left: 15px;
+            padding: 0 15px 0 15px;
+            overflow: hidden;
           }
           .product-footer {
             bottom: 0;

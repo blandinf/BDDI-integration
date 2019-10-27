@@ -4,7 +4,7 @@ import BUS from '../../const/BUS';
 
 const AutoSlide = {
     init() {
-        // this.launchAutoSliders();        
+        this.launchAutoSliders();
     },
 
     launchAutoSliders () {
@@ -12,7 +12,7 @@ const AutoSlide = {
         for (let slider of sliders) {
             interval(() => {
                 this.slide(slider);
-            }, 3000, 5);
+            }, 2600, 50);
         }
     },
 

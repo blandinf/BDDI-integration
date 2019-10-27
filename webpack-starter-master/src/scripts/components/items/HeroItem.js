@@ -1,4 +1,5 @@
 import BUS from '../../const/BUS';
+import { truncate } from "../../utils/utils";
 
 class HeroItem {
     constructor () {
@@ -18,6 +19,8 @@ class HeroItem {
         if (data) {
             this.fill(data);
         }
+
+        this.truncate();
     }
 
     fill (data) {
@@ -35,6 +38,12 @@ class HeroItem {
         this.el.classList.add('item');
         BUS.dispatchEvent(new CustomEvent('HERO::TemplateInnerHTML', {detail: {el: this.el}}));
         this.init(this.el, data);
+    }
+
+    truncate () {
+        truncate(this.title, 22);
+        truncate(this.description, 35);
+        truncate(this.color, 35);
     }
 }
 

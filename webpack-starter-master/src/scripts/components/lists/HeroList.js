@@ -18,7 +18,7 @@ const HeroList = {
 
     fillItemWithInnerHTML (event) {
         event.detail.el.innerHTML = this.template.innerHTML; 
-    }
+    },
 
 };
 

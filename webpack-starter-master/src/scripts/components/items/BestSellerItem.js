@@ -1,4 +1,5 @@
 import BUS from '../../const/BUS';
+import { truncate } from "../../utils/utils";
 
 class BestSellerItem {
     constructor () {
@@ -18,6 +19,8 @@ class BestSellerItem {
         if (data) {
             this.fill(data);
         }
+
+        this.truncate();
     }
 
     fill (data) {
@@ -40,6 +43,11 @@ class BestSellerItem {
         this.el.classList.add('product');
         BUS.dispatchEvent(new CustomEvent('BEST::TemplateInnerHTML', {detail: {el: this.el}}));
         this.init(this.el, data);
+    }
+
+    truncate () {
+        truncate(this.title, 50);
+        truncate(this.description, 25);
     }
 }
 

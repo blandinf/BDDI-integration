@@ -9,11 +9,13 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      .product-title {
+        z-index: 5;
+      }
       .btn-action {
         border: 1px solid white;
         color: white;
         z-index: 2;
-        font-size: 14px;
       }
       .product-img {
         position: absolute;

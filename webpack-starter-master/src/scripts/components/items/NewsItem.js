@@ -1,4 +1,5 @@
 import BUS from '../../const/BUS';
+import { truncate } from "../../utils/utils";
 
 class NewsItem {
     constructor () {
@@ -16,13 +17,15 @@ class NewsItem {
         if (data) {
             this.fill(data);
         }
+
+        this.truncate();
     }
 
     fill (data) {
         this.model = data;
         this.imgPath.src += this.model.images.big;
         this.title.textContent = this.model.title;
-        this.description.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non eleifend velit. Aliquam imperdiet mollis lorem a tempor. Duis condimentum sem eu risus faucibus, nec laoreet leo pellentesque. Etiam lorem ex, hendrerit nec erat at, gravida eleifend orci. ";
+        this.description.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non eleifend velit. Aliquam imperdiet mollis lorem a tempor. Duis condimentum sem eu risus faucibus, nec laoreet leo pellentesque. Etiam lorem ex, hendrerit nec erat at, gravida eleifend orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non eleifend velit. Aliquam imperdiet mollis lorem a tempor. Duis condimentum sem eu risu";
     }
 
     build (data, index) {
@@ -32,6 +35,11 @@ class NewsItem {
         this.el.setAttribute('id', 'product'+ index);
         BUS.dispatchEvent(new CustomEvent('NEWS::TemplateInnerHTML', {detail: {el: this.el}}));
         this.init(this.el, data);
+    }
+
+    truncate () {
+        truncate(this.title, 35);
+        truncate(this.description, 300);
     }
 }
 

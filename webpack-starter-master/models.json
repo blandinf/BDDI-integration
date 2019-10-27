@@ -1,9 +1,9 @@
 [
     {
-        "title": "Nom du modèle",
+        "title": "Nom du modèle ewjfgbeigheheogewjfgbeigheheog ergergeeg fewfw rfefr",
         "specs": {
             "size": "L",
-            "engine": "Mécanique",
+            "engine": "Mécanique dfgger egreger egege fefe wefwf sdwe",
             "color" : "Rouge Feu"
         },
         "stock": 3,
@@ -32,7 +32,7 @@
             "small": "bike2.png" 
         },
         "hero": {
-            "active": true,
+            "active": false,
             "color": "#000000"
         },
         "best": false
@@ -256,8 +256,8 @@
         "stock": 1,
         "slug": "/model/13",
         "images": {
-            "big": "bike2.png",
-            "small": "bike2.png" 
+            "big": "bike4.png",
+            "small": "bike4.png"
         },
         "hero": {
             "active": true,
@@ -351,12 +351,12 @@
         "stock": 1,
         "slug": "/model/18",
         "images": {
-            "big": "bike1.png",
-            "small": "bike1.png" 
+            "big": "bike3.png",
+            "small": "bike3.png"
         },
         "hero": {
-            "active": false,
-            "color": "#009f55"
+            "active": true,
+            "color": "#000000"
         },
         "best": false
     },
@@ -456,7 +456,7 @@
         "best": false
     },
     {
-        "title": "Modèle montée",
+        "title": "Modèle montée efwwfefefew ewfe wfwefw few fewfewfwefewfwefw",
         "specs": {
             "size": "L",
             "engine": "Mécanique",
